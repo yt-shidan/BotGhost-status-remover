@@ -14,7 +14,7 @@
  */
 
 
-
+const totalMembers = client.guilds.cache.reduce((total, guild) => total + guild.memberCount, 0);
 const { Client, GatewayIntentBits, ActivityType, TextChannel } = require('discord.js');
 require('dotenv').config();
 const express = require('express');
@@ -36,7 +36,7 @@ app.listen(port, () => {
 });
 
 
-const statusMessages = ["Listening To Tickets","Playing MAG Minecraft","Streaming At MalluArenaGaming"];
+const statusMessages = ["Listening to Tickets","Playing MAG Minecraft","Streaming At MalluArenaGaming","Watching ${totalMembers} members"];
 
 
 let currentIndex = 0;
